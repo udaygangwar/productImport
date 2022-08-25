@@ -4,6 +4,7 @@ using ProductImport.Database.Repository;
 using ProductImport.Source.ISourceProvider;
 using ProductImport.Source.SourceProvider;
 using System;
+using System.IO;
 using System.Linq;
 
 namespace ProductImport
@@ -21,21 +22,23 @@ namespace ProductImport
                 .AddTransient<ISoftwareAdviceRepository, SoftwareAdviceRepository>()
                 .AddTransient<ICapterraRepository, CapterraRepository>()
                 .BuildServiceProvider();
-
-            if (args.Length < 3)
+            Console.WriteLine("Please specify source and path the arguments seprated by a space");
+            var arguments=Console.ReadLine();
+            string[] abc = arguments.Split(' ');
+            if (abc.Length < 2)
             {
                 Console.WriteLine("Please specify all the arguments");
                 return;
             }
 
-            var source = args[1];
-            var path = args[2];
+            var source = abc[0];
+            var path = Path.Combine("../../.././../feed-products/",abc[1]);
 
             //var source = "capterra";
-            //var path = "feed-products/capterra.yaml";
+            //var path = "../../.././../feed-products/capterra.yaml";
 
             //var source = "softwareadvice";
-            //var path = "feed-products/1.json";
+            //var path = "../../.././../feed-products/softwareadvice.json";
 
             if (source.ToLower().Equals("capterra"))
             {
@@ -54,6 +57,7 @@ namespace ProductImport
                 Console.WriteLine("Not a valid source");
                 return;
             }
+            Console.Read();
         }
     }
 }
