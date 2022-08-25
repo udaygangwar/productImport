@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Product-Import-master",
+    "\\Product-Import-master\\Answers",
+    "\\Product-Import-master\\feed-products",
+    "\\Product-Import-master\\ProductImport"
   ],
+  "SelectedNode": "\\Product-Import-master\\ProductImport.sln",
   "PreviewInSolutionExplorer": false
 }
