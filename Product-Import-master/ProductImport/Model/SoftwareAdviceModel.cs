@@ -6,6 +6,7 @@ namespace ProductImport.Model
 {
     public class SoftwareAdviceModel
     {
+        /*Just to test comit and pul request*/
         [JsonPropertyName("title")]
         public string Title { get; set; }
 
